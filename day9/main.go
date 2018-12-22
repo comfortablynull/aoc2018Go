@@ -36,11 +36,11 @@ func main() {
 	numPlayers := 419
 	players := make(map[int]int)
 	highscore := 0
-	for i := 1; i <= max; i++ {
+	for i := 0; i <= max; i++ {
 		n := &Node{Value: i}
 		if i%23 == 0 {
 			node = node.Pop(7)
-			k := (i - 1) % numPlayers
+			k := i % numPlayers
 			players[k] += i
 			players[k] += node.Value
 			if players[k] > highscore {
